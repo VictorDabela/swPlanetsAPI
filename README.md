@@ -25,7 +25,8 @@ https://starwars-planets-dabela.herokuapp.com
 
 **Create Planet**
 ----
-
+  Creates a new planet on the Planets collection.
+  
 * **URL**
 
   /planets/
@@ -46,6 +47,134 @@ https://starwars-planets-dabela.herokuapp.com
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-    **Content:** 
-    `{ "success": false,
-    "message": "Planeta 'Tatooine' já está cadastrado." }`
+    **Content:** `{ "success": false, "message": "Planeta 'Tatooine' já está cadastrado." }`
+    
+----
+
+**List all planets**
+----
+  Returns a list of *ALL* the planets registered on the collection.
+  
+* **URL**
+
+  /planets/
+  
+  * **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+  None
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ success: true, [Planets] }`
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:**  `{success: false, error: error message}}`
+    
+    
+----
+
+**List planet by ID**
+----
+  Return json data about a single planet registered on the collection, searching by it's ID.
+  
+* **URL**
+
+  /planets/id/:id
+  
+  * **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+  **Required:**
+ 
+   `id=[ObjectId]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ success: true, [Planet] }`
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** `{ success: false, error: error message} }`
+    
+  * **Code:** 404 NOT FOUND <br />
+  **Content:**  `{ success: false, message: `Planeta id={id} não encontrado.` }`
+        
+    
+----
+
+**List planet by NAME**
+----
+  Return json data about a single planet registered on the collection, searching by it's NAME.
+  
+* **URL**
+
+  /planets/nome/:nome
+  
+  * **Method:**
+
+  `GET`
+  
+*  **URL Params**
+
+  **Required:**
+ 
+   `nome=[string]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ success: true, [Planet] }`
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** `{ success: false, error: error message} }`
+    
+  * **Code:** 404 NOT FOUND <br />
+  **Content:**  `{ success: false, message: `Planeta {nome} não encontrado.` }`
+          
+    
+----
+
+**Remove Planet**
+----
+  Remove a planet from the collection.
+  
+* **URL**
+
+  /planets/:nome
+  
+  * **Method:**
+
+  `DELETE`
+  
+*  **URL Params**
+
+  **Required:**
+ 
+   `nome=[string]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ "success": true, "message": "Planeta {nome} removido com sucesso." }`
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** `{success: false, error: error message} }`
+    
+  * **Code:** 404 NOT FOUND <br />
+  **Content:**  `{ success: false, message: `Planeta não encontrado.` }`
