@@ -25,7 +25,7 @@ https://starwars-planets-dabela.herokuapp.com
 
 **Create Planet**
 ----
-  Creates a new planet on the Planets collection.
+  Creates a new planet on the Planets collection.  The method will consult the Star Wars API (https://swapi.co/) to check on how many Star Wars movies it has appeared, and add the result as an integer attribute of the iten on the database ("filmesAparicoes"). 
   
 * **URL**
 
