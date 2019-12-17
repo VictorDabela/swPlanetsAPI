@@ -31,23 +31,49 @@ https://starwars-planets-dabela.herokuapp.com
 
   /planets/
   
-  * **Method:**
+* **Method:**
 
   `POST`
   
 *  **URL Params**
 
   None
+  
+*  **Data Params**
 
+  **Required:**
+ 
+   `nome=[string]`
+   
+  **Optional:**
+  
+  `clima=array[string]`
+  `terreno=array[string]`
+   
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ Planet }`
+    **Content:** `{ success: true, [Planet] }`
  
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
     **Content:** `{ "success": false, "message": "Planeta 'Tatooine' já está cadastrado." }`
+    
+* **Sample Call:**
+
+  ```
+      url: "/planets",
+      dataType: "json",
+      type : "POST",
+      body: 
+      {
+      "nome": "Tatooine",
+      "clima": ["Árido", "Desértico"],
+      "terreno": ["deserto", "montanhoso", "caatinga"]
+      }
+
+  ``` 
     
 ----
 
@@ -59,7 +85,7 @@ https://starwars-planets-dabela.herokuapp.com
 
   /planets/
   
-  * **Method:**
+* **Method:**
 
   `GET`
   
@@ -88,7 +114,7 @@ https://starwars-planets-dabela.herokuapp.com
 
   /planets/id/:id
   
-  * **Method:**
+* **Method:**
 
   `GET`
   
@@ -122,7 +148,7 @@ https://starwars-planets-dabela.herokuapp.com
 
   /planets/nome/:nome
   
-  * **Method:**
+* **Method:**
 
   `GET`
   
@@ -156,7 +182,7 @@ https://starwars-planets-dabela.herokuapp.com
 
   /planets/:nome
   
-  * **Method:**
+* **Method:**
 
   `DELETE`
   
