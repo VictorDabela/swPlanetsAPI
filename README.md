@@ -33,11 +33,11 @@ https://starwars-planets-dabela.herokuapp.com
   
 * **Method:**
 
-  `POST`
+    `POST`
   
 *  **URL Params**
 
-  None
+    None
   
 *  **Data Params**
 
