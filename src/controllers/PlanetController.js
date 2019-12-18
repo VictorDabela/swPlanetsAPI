@@ -4,9 +4,7 @@ const request = require('request');
 class PlanetController {
     
     async getFilmeAparicao(planetName) {
-            // Return new promise 
         return new Promise(function (resolve, reject) {
-            // Do async job
             request(`https://swapi.co/api/planets/?search=${planetName}`, function (err, resp, body) {
                 if (err) {
                     reject(err);
@@ -17,8 +15,6 @@ class PlanetController {
                         resolve(0);
                     else
                         resolve(planeta.films.length);
-
-                    // resolve(JSON.parse(body));
                 }
             });
         });
@@ -29,8 +25,6 @@ class PlanetController {
             const planetName = req.body.nome;
 
             var planet = await Planet.find({ nome: planetName.toLowerCase() });
-            
-            console.log(planet);
 
             if (planet.length > 0)
                 res.status(400).json({ success: false, message: `Planeta '${planetName}' já está cadastrado.` });
@@ -61,9 +55,14 @@ class PlanetController {
     }
 
     async getPlanets(req, res) {
-        const planets = await Planet.find().sort('nome');
-
-        return res.json({ success: true, planets });
+        try {
+            const planets = await Planet.find().sort('nome');
+        
+            return res.json({ success: true, planets });
+        }
+        catch (error) {
+            res.status(400).json( {success: false, error: error.message} );
+        }
     }
 
     async getPlanetById(req, res) {
@@ -72,7 +71,7 @@ class PlanetController {
             const planet = await Planet.findById(req.params.id);
 
             if (!planet)
-                return res.json({ success: false, message: `Planeta id=${req.params.id} não encontrado.` });
+                return res.status(404).json({ success: false, message: `Planeta id=${req.params.id} não encontrado.` });
             else
                 return res.json({ success: true, planet });
 
