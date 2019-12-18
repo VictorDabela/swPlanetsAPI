@@ -5,15 +5,15 @@ This API was built primary for creating planets of the Star Wars universe on a m
 
 It allows the operations:
 
-- Add a new planet, containing its name, its weather and terrains;
+* Add a new planet, containing its name, its weather and terrains;
 
-- List planets;
+* List planets;
 
-- List planet by name;
+* List planet by name;
 
-- List planet by Id;
+* List planet by Id;
 
-- Remove planet.
+* Remove planet.
 
 # Starting
 
