@@ -53,12 +53,12 @@ https://starwars-planets-dabela.herokuapp.com
 * **Success Response:**
 
   * **Code:** 200 OK<br />
-    **Content:** `{ success: true, [Planet] }`
+    **Content:** `{ "success": true, [Planet] }`
  
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-    **Content:** `{ "success": false, "message": "Planeta 'Tatooine' já está cadastrado." }`
+    **Content:** `{ "success": false, "message": "Planeta {Planet.nome} já está cadastrado." }`
     
 * **Sample Call:**
 
@@ -96,12 +96,12 @@ https://starwars-planets-dabela.herokuapp.com
 * **Success Response:**
 
   * **Code:** 200 OK<br />
-    **Content:** `{ success: true, [Planets] }`
+    **Content:** `{ "success": true, [Planets] }`
  
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-    **Content:**  `{success: false, error: error message}}`
+    **Content:**  `{"success": false, error: error message}}`
     
     
 ----
@@ -127,15 +127,15 @@ https://starwars-planets-dabela.herokuapp.com
 * **Success Response:**
 
   * **Code:** 200 OK<br />
-    **Content:** `{ success: true, [Planet] }`
+    **Content:** `{ "success": true, [Planet] }`
  
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-    **Content:** `{ success: false, error: error message} }`
+    **Content:** `{ "success": false, error: error message} }`
     
   * **Code:** 404 NOT FOUND <br />
-    **Content:**  `{ success: false, message: "Planeta id={id} não encontrado." }`
+    **Content:**  `{ "success": false, error: "Planeta id={id} não encontrado." }`
         
     
 ----
@@ -161,15 +161,15 @@ https://starwars-planets-dabela.herokuapp.com
 * **Success Response:**
 
   * **Code:** 200 OK<br />
-    **Content:** `{ success: true, [Planet] }`
+    **Content:** `{ "success": true, [Planet] }`
  
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-    **Content:** `{ success: false, error: error message} }`
+    **Content:** `{ "success": false, error: error message} }`
     
   * **Code:** 404 NOT FOUND <br />
-    **Content:**  `{ success: false, message: "Planeta {nome} não encontrado." }`
+    **Content:**  `{ "success": false, error: "Planeta {nome} não encontrado." }`
           
     
 ----
@@ -200,7 +200,7 @@ https://starwars-planets-dabela.herokuapp.com
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-    **Content:** `{success: false, error: error message} }`
+    **Content:** `{ "success": false, error: error message} }`
     
   * **Code:** 404 NOT FOUND <br />
-    **Content:**  `{ success: false, message: "Planeta não encontrado." }`
+    **Content:**  `{ "success": false, error: "Planeta não encontrado." }`
